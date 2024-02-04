@@ -1,0 +1,16 @@
+<script>
+    function getRandomIntegers() {
+    var randomIntegers = [];
+    for (var i = 0; i < 10; i++) {
+    // Generate a random integer between 1 and 100
+    var randomInteger = Math.floor(Math.random() * 100);
+    // Add the random integer to the array
+    randomIntegers.push(randomInteger);
+    }
+    return randomIntegers;
+    }
+
+    // Example usage:
+    var randomIntegersArray = getRandomIntegers();
+    console.log("Random Integers:", randomIntegersArray);
+</script>

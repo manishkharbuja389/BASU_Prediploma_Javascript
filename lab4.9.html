@@ -1,0 +1,15 @@
+<script>
+    function getRandomItemFromArray(arr) {
+    // Generate a random index within the array length
+    var randomIndex = Math.floor(Math.random() * arr.length);
+
+    // Return the random item
+    return arr[randomIndex];
+    }
+
+    // Example usage:
+    var myArray = ["apple", "banana", "orange", "grape", "kiwi"];
+
+    var randomItem = getRandomItemFromArray(myArray);
+    console.log("Random Item:", randomItem);
+</script>

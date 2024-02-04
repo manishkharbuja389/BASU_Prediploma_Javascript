@@ -1,0 +1,13 @@
+<script>
+    function reverseNumber(number) {
+    // Convert the number to a string, reverse it, and convert it back to a number
+    var reversedString = number.toString().split('').reverse().join('');
+    var reversedNumber = parseInt(reversedString);
+    return reversedNumber;
+    }
+    // Example usage:
+    var originalNumber = 123456789;
+    var reversedNumber = reverseNumber(originalNumber);
+    console.log("Original Number:", originalNumber);
+    console.log("Reversed Number:", reversedNumber);
+</script>

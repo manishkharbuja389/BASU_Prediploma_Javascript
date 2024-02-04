@@ -1,0 +1,26 @@
+<script>
+    function sortArrayAscending(arr) {
+    // Use the sort method to sort the array in ascending order
+    return arr.slice().sort(function(a, b) {
+      return a - b;
+    });
+  }
+  
+  function sortArrayDescending(arr) {
+    // Use the sort method to sort the array in descending order
+    return arr.slice().sort(function(a, b) {
+      return b - a;
+    });
+  }
+  
+  // Example usage:
+  var numbers = [5, 2, 8, 1, 7];
+  
+  var ascendingOrder = sortArrayAscending(numbers);
+  console.log("Ascending Order:", ascendingOrder);
+  
+  var descendingOrder = sortArrayDescending(numbers);
+  console.log("Descending Order:", descendingOrder);
+  
+</script>
+  

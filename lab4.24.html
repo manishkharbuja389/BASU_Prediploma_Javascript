@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .clock {
+      position: relative;
+      width: 200px;
+      height: 200px;
+      border: 2px solid #333;
+      border-radius: 50%;
+    }
+
+    .hand {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform-origin: 50% 100%;
+      transform: translate(-50%, -100%);
+      background-color: #333;
+      height: 50px;
+      width: 4px;
+      border-radius: 2px;
+      transition: transform 0.5s cubic-bezier(0.4, 2.4, 0.75, 1.2);
+    }
+  </style>
+</head>
+<body>
+  <div class="clock">
+    <div class="hand" id="hourHand"></div>
+    <div class="hand" id="minuteHand"></div>
+    <div class="hand" id="secondHand"></div>
+  </div>
+
+  <script>
+    function updateClock() {
+      var now = new Date();
+      var hours = now.getHours() % 12;
+      var minutes = now.getMinutes();
+      var seconds = now.getSeconds();
+
+      var hourDegrees = (hours * 30) + (0.5 * minutes); // Each hour corresponds to 30 degrees
+      var minuteDegrees = minutes * 6; // Each minute corresponds to 6 degrees
+      var secondDegrees = seconds * 6; // Each second corresponds to 6 degrees
+
+      document.getElementById('hourHand').style.transform = `translate(-50%, -100%) rotate(${hourDegrees}deg)`;
+      document.getElementById('minuteHand').style.transform = `translate(-50%, -100%) rotate(${minuteDegrees}deg)`;
+      document.getElementById('secondHand').style.transform = `translate(-50%, -100%) rotate(${secondDegrees}deg)`;
+    }
+
+    // Update the clock every second
+    setInterval(updateClock, 1000);
+
+    // Initial update
+    updateClock();
+  </script>
+</body>
+</html>

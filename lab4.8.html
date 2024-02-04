@@ -1,0 +1,26 @@
+<script>
+    function computeSum(arr) {
+      // Use the reduce method to compute the sum of the array
+      return arr.reduce(function (accumulator, currentValue) {
+        return accumulator + currentValue;
+      }, 0);
+    }
+    
+    function computeProduct(arr) {
+      // Use the reduce method to compute the product of the array
+      return arr.reduce(function (accumulator, currentValue) {
+        return accumulator * currentValue;
+      }, 1); // Initialize accumulator with 1 for multiplication
+    }
+    
+    // Example usage:
+    var integers = [2, 3, 4, 5];
+    
+    var sum = computeSum(integers);
+    console.log("Sum:", sum);
+    
+    var product = computeProduct(integers);
+    console.log("Product:", product);
+    
+</script>
+    
