@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Calculator</title>
+</head>
+<body>
+  1st Number:
+  <input type="number" id="num1">
+  <br>
+  2nd Number:
+  <input type="number" id="num2">
+  <br>
+  <button id="multiplyBtn">Multiply</button>
+  <br>
+  <button id="divideBtn">Divide</button>
+  <br>
+  <div id="result"></div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Function to calculate multiplication and division
+    function multiply() {
+      let num1 = parseFloat(document.getElementById('num1').value);
+      let num2 = parseFloat(document.getElementById('num2').value);
+      let resultDiv = document.getElementById('result');
+
+      if (isNaN(num1) || isNaN(num2)) {
+        resultDiv.textContent = 'Please enter valid numbers.';
+        return;
+      }
+
+      let multiplication = num1 * num2;
+
+      resultDiv.innerHTML = `Multiplication: ${multiplication}`;
+    }
+
+    // Event listener for button click
+    document.getElementById('multiplyBtn').addEventListener('click', multiply);
+
+    // Event listener for key press
+    document.addEventListener('keypress', function(event) {
+      if (event.key === 'Enter') {
+        multiply();
+      }
+    });
+    function divide() {
+      let num1 = parseFloat(document.getElementById('num1').value);
+      let num2 = parseFloat(document.getElementById('num2').value);
+      let resultDiv = document.getElementById('result');
+
+      if (isNaN(num1) || isNaN(num2)) {
+        resultDiv.textContent = 'Please enter valid numbers.';
+        return;
+      }
+
+      let division = num1 / num2;
+
+      resultDiv.innerHTML = `Division: ${division}`;
+    }
+
+    // Event listener for button click
+    document.getElementById('divideBtn').addEventListener('click', divide);
+
+    // Event listener for key press
+    document.addEventListener('keypress', function(event) {
+      if (event.key === 'Enter') {
+        divide();
+      }
+    });
+  });
+</script>
+</body>
+</html>

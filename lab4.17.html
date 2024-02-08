@@ -1,0 +1,20 @@
+<script>
+// Define a sample object
+var student = {
+  name: 'David Rayy',
+  sclass: 'VI',
+  rollno: 12,
+};
+
+// Function to list properties of an object
+function listProperties(obj) {
+  for (let properties in obj) {
+    if (obj.hasOwnProperty(properties)) { // Ensure property is not inherited
+      console.log(properties);
+    }
+  }
+}
+
+// Call the function with the object
+listProperties(student);
+</script>

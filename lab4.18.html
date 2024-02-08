@@ -1,0 +1,26 @@
+<script>
+    // Define the object
+  var student = {
+  name: 'David Rayy',
+  sclass: 'VI',
+  rollno: 12,
+};
+
+// Function to delete a property and print the object
+function deleteAndPrint(obj, propToDelete) {
+  console.log('Object before deleting:', obj);
+  
+  // Check if the property exists
+  if (obj.hasOwnProperty(propToDelete)) {
+    // Delete the property
+    delete obj[propToDelete];
+    console.log('Object after deleting:', obj);
+  } else {
+    console.log('Property not found. Object remains unchanged:', obj);
+  }
+}
+
+// Call the function to delete 'rollno' property
+deleteAndPrint(student, 'rollno');
+
+</script>
